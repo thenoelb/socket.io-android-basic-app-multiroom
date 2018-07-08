@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">socket.io-android-tutorial - NB Edition</string>
+    <string name="app_name">socket.io-android-basic-app</string>
     <string name="title_activity_login">Username Login</string>
 
     <!-- Strings related to login -->
