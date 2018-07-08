@@ -1,4 +1,4 @@
-##Android Basic App##
+## Android Basic App ##
 
 Basically an app to see if I could send a socket event to a socket server I created.
 
