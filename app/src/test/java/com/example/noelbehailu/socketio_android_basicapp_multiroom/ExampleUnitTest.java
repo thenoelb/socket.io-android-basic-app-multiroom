@@ -1,4 +1,4 @@
-package com.example.noelbehailu.socketio_android_tutorial;
+package com.example.noelbehailu.socketio_android_basicapp_multiroom;
 
 import org.junit.Test;
 

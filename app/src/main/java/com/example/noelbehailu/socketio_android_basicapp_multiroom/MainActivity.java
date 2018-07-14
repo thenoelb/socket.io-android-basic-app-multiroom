@@ -1,10 +1,9 @@
-package com.example.noelbehailu.socketio_android_tutorial;
+package com.example.noelbehailu.socketio_android_basicapp_multiroom;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.github.nkzawa.socketio.client.Socket;
 
@@ -14,6 +13,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private SocketApp socketApp;
     private Button sendButton;
     private String mUsername = "androidtestnb";
+    private String mRoom = "mobileTestRoom";
 
 
     @Override
@@ -23,17 +23,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         socketApp = (SocketApp) getApplication();
         sendButton = (Button) findViewById(R.id.sendbutton);
-        sendButton.setOnClickListener(this);
         mSocket = socketApp.getSocket();
         mSocket.connect();
-        if (mSocket.connected()){
-            Toast.makeText(MainActivity.this, mUsername+"Connected!", Toast.LENGTH_SHORT).show();
-            mSocket.emit("connection", mSocket);
-        }
+        mSocket.emit("room name", mRoom, mUsername);
+        sendButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         mSocket.emit("chat message", "this works!");
+
     }
 }
